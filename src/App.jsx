@@ -1,7 +1,9 @@
 import './App.css'
 import { HabitCard } from './components/HabitCard';
 import { Counter } from './components/Counter';
-import { Header } from './components/Header'
+import { Header } from './components/Header';
+
+import habits from './data/habits';
 
 function App() {
 
@@ -10,7 +12,16 @@ function App() {
   <Header />
   <Counter />
 
-  <HabitCard icon={"💧"} name={"Beber 2l de Água"} /> 
+  <main className="habit-list">
+    {
+      habits.map((habit) => (
+        <HabitCard key={habit.id} icon={habit.icon} name={habit.name} />
+      ))
+    }
+
+  </main>
+
+  
     </>
   );
 }
