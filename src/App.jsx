@@ -3,6 +3,8 @@ import './App.css'
 import { HabitCard } from './components/HabitCard';
 import { Counter } from './components/Counter';
 import { Header } from './components/Header';
+import { CounterExercise } from './components/CounterExercise';
+import { Ranking } from './components/Ranking';
 
 import initialHabits from './data/habits';
 
@@ -24,10 +26,12 @@ function App() {
 
   return (
     <>
+    {/* <Ranking /> */}
+    {/* <CounterExercise /> */}
       <Header />
       <Counter />
 
-      <main className="habit-list">
+       <main className="habit-list">
         {
           habits.map((habit) => (
             <HabitCard key={habit.id}
@@ -39,7 +43,7 @@ function App() {
           ))
         }
 
-      </main>
+      </main> 
 
 
     </>

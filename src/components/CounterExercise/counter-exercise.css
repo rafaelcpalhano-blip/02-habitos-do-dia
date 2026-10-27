@@ -1,0 +1,12 @@
+.commands {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.reset-button {
+margin: 0 auto;
+max-width: 50%;
+}
