@@ -10,11 +10,16 @@ import initialHabits from './data/habits';
 
 function App() {
   const [habits, setHabits] = useState(initialHabits);
-  const [count, setCount] = useState(0);
+
+  const doneCount = habits.filter((habit) => habit.done).length;
+
+   
+
+  // const [count, setCount] = useState(0);
 
   function handleToggle(id) {
-    setCount(count + 1);
-    console.log(count)
+    // setCount(count + 1);
+    // console.log(count)
     // console.log(id)
 
     setHabits(
@@ -22,6 +27,9 @@ function App() {
         habit.id === id ? { ...habit, done: !habit.done } : habit,
       ),
     );
+
+   
+
   }
 
   return (
@@ -29,7 +37,7 @@ function App() {
     {/* <Ranking /> */}
     {/* <CounterExercise /> */}
       <Header />
-      <Counter />
+      <Counter doneCount={doneCount} total={habits.length} />
 
        <main className="habit-list">
         {
